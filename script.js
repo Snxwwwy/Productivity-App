@@ -1,13 +1,10 @@
-// Load tasks from localStorage
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// Save tasks to localStorage
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
   renderTasks();
 }
 
-// Add new task
 function addTask() {
   const input = document.getElementById("taskInput");
   const category = document.getElementById("categorySelect").value;
@@ -22,32 +19,27 @@ function addTask() {
   saveTasks();
 }
 
-// Toggle complete
 function toggleComplete(index) {
   tasks[index].completed = !tasks[index].completed;
   saveTasks();
 }
 
-// Delete task
 function deleteTask(index) {
   tasks.splice(index, 1);
   saveTasks();
 }
 
-// Add subtask
 function addSubtask(index, subtaskText) {
   if (!subtaskText) return;
   tasks[index].subtasks.push({ text: subtaskText, completed: false });
   saveTasks();
 }
 
-// Toggle subtask complete
 function toggleSubtask(taskIndex, subIndex) {
   tasks[taskIndex].subtasks[subIndex].completed = !tasks[taskIndex].subtasks[subIndex].completed;
   saveTasks();
 }
 
-// Render all tasks
 function renderTasks() {
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = "";
@@ -80,7 +72,6 @@ function renderTasks() {
   });
 }
 
-// Filter/Search
 function filterTasks() {
   const filter = document.getElementById("searchInput").value.toLowerCase();
   const lis = document.querySelectorAll("#taskList li");
@@ -89,7 +80,6 @@ function filterTasks() {
   });
 }
 
-// Dark Mode
 document.getElementById("darkModeToggle").addEventListener("change", e => {
   document.body.classList.toggle("dark-mode", e.target.checked);
 });
