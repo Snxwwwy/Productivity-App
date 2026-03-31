@@ -1,0 +1,111 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(120deg, #f6f9fc, #dce7f2);
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 500px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .container {
+  background-color: #1f1f1f;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"], select, input[type="date"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  flex: 1;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #f1f1f1;
+  cursor: grab;
+  transition: all 0.2s;
+}
+
+body.dark-mode li {
+  background-color: #2a2a2a;
+}
+
+li.completed .task-title {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Priority Colors */
+.low { border-left: 5px solid green; }
+.medium { border-left: 5px solid orange; }
+.high { border-left: 5px solid red; }
+
+li .task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li .subtasks {
+  margin-left: 15px;
+}
+
+li .subtasks input {
+  margin-right: 5px;
+}
+
+.dark-mode-toggle {
+  margin-bottom: 15px;
+  text-align: right;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>My Productivity App</h1>
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+      <label>
+        <input type="checkbox" id="darkModeToggle">
+        Dark Mode
+      </label>
+    </div>
+
+    <!-- Task Input -->
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Enter a task">
+      <select id="categorySelect">
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+        <option value="Shopping">Shopping</option>
+      </select>
+      <select id="prioritySelect">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+      <input type="date" id="dueDate">
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <!-- Search -->
+    <input type="text" id="searchInput" placeholder="Search tasks..." onkeyup="filterTasks()">
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
